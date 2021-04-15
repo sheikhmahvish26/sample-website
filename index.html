@@ -10,7 +10,6 @@
     
   <div class="container">
       <h1 class="main-title">SpaceX Launch Programs</h1>
-
       <div class="sidebar">
         <div class="sidebar-wrap">
         <h3>Filters</h3>
@@ -19,13 +18,13 @@
         </div>
         <div class="filters-wrap">
           <h4>Successful Year</h4>
-          <button id="launch-true" type="button" class="" onclick="getDataByLaunch()">True</button>
-          <button id="launch-false" type="button" class="" onclick="getDataByLaunch()">False</button>
+          <button id="launch-true" type="button" class="launch-success" value="true" onclick="getDataByLaunch(this)">True</button>
+          <button id="launch-false" type="button" class="launch-success" value="false" onclick="getDataByLaunch(this)">False</button>
         </div>
         <div class="filters-wrap">
           <h4>Successful Landing</h4>
-          <button id="landing-true" type="button" class="" onclick="getDataByLanding()">True</button>
-          <button id="landing-false" type="button" class="" onclick="getDataByLanding()">False</button>
+          <button id="landing-true" type="button" class="landing-success" value="true" onclick="getDataByLanding(this)">True</button>
+          <button id="landing-false" type="button" class="landing-success" value="false" onclick="getDataByLanding(this)">False</button>
         </div>
       </div>
     </div>

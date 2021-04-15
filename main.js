@@ -9,7 +9,7 @@ $(document).ready(function () {
 function init() {
     getData({});
     createButtons();
-    //clearFilters();
+    clearFilters();
 }
 
 function getDataByYear($event) {
@@ -22,28 +22,32 @@ function getDataByYear($event) {
     getData(filters);
 }
 
-function getDataByLaunch() {
-    launch_success = $(this).attr('value');
+function getDataByLaunch($event) {
+    launch_success = $.parseJSON($event.innerHTML.toLowerCase());
     if (launch_success) {
         $('#launch-true').addClass('highlight');
     } else {
         $('#launch-false').removeClass('highlight');
     }
-    let filters = { launch_success: launch_success, landing_success: landing_success };
+    let filters = {};
+    launch_success ? filters.launch_success = true : filters;
+    landing_success ? filters.landing_success = true : filters;
     if (year != undefined) {
         filters.year = year;
     }
     getData(filters);
 }
 
-function getDataByLanding() {
-    landing_success = $(this).attr('value');
+function getDataByLanding($event) {
+    landing_success = $.parseJSON($event.innerHTML.toLowerCase());
     if (landing_success) {
         $('#landing-true').addClass('highlight');
     } else {
         $('#landing-false').removeClass('highlight');
     }
-    let filters = { launch_success: launch_success, landing_success: landing_success };
+    let filters = {};
+    launch_success ? filters.launch_success = true : filters;
+    landing_success ? filters.landing_success = true : filters;
     if (year != undefined) {
         filters.year = year;
     }
@@ -69,6 +73,9 @@ function clearFilters() {
     $('.something').removeClass("highlight");
     $('.launch-success').removeClass("highlight");
     $('.landing-success').removeClass("highlight");
+    year = undefined;
+    launch_success = false;
+    landing_success = false;
 }
 
 function createButtons() {
@@ -88,8 +95,8 @@ function createButtons() {
 }
 
 function createCard(dataSet) {
+    $('#data-container').empty();
     for (let data in dataSet) {
-
         let obj = dataSet[data];
         let displayImage = obj.links.mission_patch;
         let cardTitle = obj.mission_name + ' #' + obj.flight_number;

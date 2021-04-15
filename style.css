@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    font-family: 'PT Sans', sans-serif;
+    background-color: #ccc;
+}
+
+.container {
+    max-width: 1440px;
+    padding: 10px;
+    display: table;
+    margin: 0 auto;
+}
+
+.main-title {margin-bottom: 0;}
+
+.sidebar {
+    width: 19%;
+    background-color: #fff;
+    border-radius: 5px;
+    float: left;
+    margin: 10px; 
+    padding-bottom: 50px;
+}
+
+.sidebar-wrap {
+    padding: 10px;
+}
+
+.sidebar-wrap h3{margin: 0; font-weight: 800;}
+
+.filters-wrap{padding: 10px; clear: both;}
+
+.filters-wrap h4 {
+    color: #888;
+    text-align: center;
+    position: relative;
+    line-height: 1.5;
+    margin: 0;
+    margin-bottom: 6px;
+}
+
+.filters-wrap h4::after {
+    position: absolute;
+    content: "";
+    width: 80%;
+    bottom: 0;
+    left: 10%;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.filters-wrap button {
+    width: 35%;
+    border-radius: 4px;
+    background-color: #D0F0C0;
+    border: none;
+    padding: 6px;
+    margin: 6px 10px;
+}
+
+.filters-wrap button:hover,
+.filters-wrap button:active {background-color: #4cbb17; cursor: pointer;}
+
+.filters-wrap button:nth-child(odd){float: left;}
+.filters-wrap button:nth-child(even){float: right;}
+
+.main-wrap {
+    width: 79%;
+    float: left;
+}
+
+.box {
+    width: 25%;
+    float: left;
+}
+
+.box-wrap {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.box img {
+    background-color: eee;
+}
+
+.mission-title{color: #0047ab;}
+
+.mission-id, .launch-year, .launch-success, .launch-landing{font-weight: 700;}
+.box-wrap ul{margin: 0;}
+.box-wrap p{color: #888;}
+.box-wrap span{color: #000; }
+.launch-landing {word-wrap: break-word; width: 100px; display: inline-block;}
+
+.dev-title{text-align: center; margin-top: 50px;} 
+.dev-title span{color: #555;}
+
+@media screen and (max-width: 700px){
+    .sidebar {width: 100%; margin: 0 0 10px 0;}
+    .box-wrap{margin: 10px 0;}
+    .main-wrap {width: 100%;}
+    .box{width: 100%;}
+    .launch-landing {width: auto;}
+}
+
+@media screen and (min-width: 701px) and (max-width: 1024px)  {
+    .sidebar {width: 27%; }
+    .main-wrap {width: 70%;}
+    .box{width: 50%;}
+    .launch-landing {width: auto;}
+
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px)  {
+
+}
+
+.something{
+
+}
+
+.highlight{
+    background-color: green;
+}
